@@ -144,13 +144,6 @@ int main(void)
 	        break;
 
 	      case 3:
-	    	/* __HAL_TIM_SET_AUTORELOAD(&htim1, 999);
-	    	 HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-
-	    	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, count);
-	    	count++;
-	    	if(count == 999) count = 0;
-	    	HAL_Delay(5);*/
 	    	  HAL_Delay(5);
 	        break;
 	      case 5:
@@ -160,11 +153,6 @@ int main(void)
 	    	  pwnValue = (adcValue * 1000) / 4095;
 	    	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, pwnValue);
 	    	  HAL_ADC_Stop(&hadc1);
-
-	    	  // Chuyển ADC value sang chuỗi
-	    	      //char msg[20];
-	    	      //int len = sprintf(msg, "ADC: %lu\r\n", adcValue);
-	    	      //HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, 100);
 	    	  break;
 	      default:
 	        HAL_TIM_Base_Stop_IT(&htim2);
@@ -652,3 +640,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
